@@ -41,8 +41,41 @@ def scraper
   # запись name'ов
   i = 0
   while i < kovorkings.size do
-  sheet1.row(i+1).push kovorkings[i][:name].to_s
+  sheet1.row(i+1).push kovorkings[i][:name]
   i += 1
+
+  table.write 'C:\Users\v\Desktop\scraper\demo.xls'
+  end
+
+  #запись титлов
+  i = 0
+  while i < kovorkings.size do
+  sheet1.row(i+2).push kovorkings[i][:prefix]
+  i += 1
+
+  table.write 'C:\Users\v\Desktop\scraper\demo.xls'
+  end
+
+  #запись url
+  i = 0
+  while i < kovorkings.size do
+  sheet1.row(i+3).push kovorkings[i][:url]
+
+  table.write 'C:\Users\v\Desktop\scraper\demo.xls'
+  end
+
+  #запись img url
+  i = 0
+  while i < kovorkings.size do
+  sheet1.row(i+4).push kovorkings[i][:img_url]
+
+  table.write 'C:\Users\v\Desktop\scraper\demo.xls'
+  end
+
+  #часы работы
+  i = 0
+  while i < kovorkings.size do
+  sheet1.row(i+5).push kovorkings[i][:time]
 
   table.write 'C:\Users\v\Desktop\scraper\demo.xls'
   end
